@@ -1,6 +1,3 @@
-
-ttn-cubecell-riego
-
 # Introducción
 
 El objetivo de este proyecto es la creación de un nodo final usando una placa Heltec CubeCell HTCC-AB01 que sea capaz de enviar y recibir datos usando LoRaWAN con The Things Network. 
@@ -21,6 +18,8 @@ Necesitamos esta extensión  de visual Studio Code para poder crear y volcar pro
 Esta placa se programa igual que un Arduino, así que la idea es hacer nuestro primer "hola mundo" con cualquiera de los ejemplos que hay en el github de [HelTecAutomation](https://github.com/HelTecAutomation/CubeCell-Arduino/tree/master/libraries).  
 
 Crear el proyecto, compilarlo y enviarlo a la placa. 
+
+![](capturas/cap_01.png?raw=true)
 
 # Fase 2 - Cuenta en TTN 
 Crear una cuenta, una aplicación, un dispositivo en The Things Network...
