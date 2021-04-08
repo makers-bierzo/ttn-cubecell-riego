@@ -21,6 +21,8 @@ Crear el proyecto, compilarlo y enviarlo a la placa.
 
 ![](capturas/cap_01.png?raw=true)
 
+![](capturas/cap_02.png?raw=true)
+
 # Fase 2 - Cuenta en TTN 
 Crear una cuenta, una aplicación, un dispositivo en The Things Network...
 
