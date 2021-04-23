@@ -24,7 +24,19 @@ Crear el proyecto, compilarlo y enviarlo a la placa.
 ![](capturas/cap_02.png?raw=true)
 
 # Fase 2 - Cuenta en TTN 
-Crear una cuenta, una aplicación, un dispositivo en The Things Network...
+
+Los pasos en esta fase son muy sencillos ya que 
+
+1. Crear una cuenta en [The Things Network.](https://www.thethingsnetwork.org/)
+
+2. Crear un aplicación. Sólo se necesita pulsar sobre **add application** y poner un nombre al Application ID.
+
+![](capturas/cap_03.png?raw=true)
+
+3. Crear un dispositivo dentro de la aplicación. Sólo se necesita pulsar sobre **register device** y poner un nombre al Device ID.
+
+![](capturas/cap_04.png?raw=true)
+
 
 # Fase 3 - Software de envío y recepción de datos a TTN 
 Programa para la CubeCell que envíe datos de un sensor cada cierto tiempo y active un relé desde TTN ...
