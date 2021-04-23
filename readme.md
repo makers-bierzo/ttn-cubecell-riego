@@ -25,8 +25,6 @@ Crear el proyecto, compilarlo y enviarlo a la placa.
 
 # Fase 2 - Cuenta en TTN 
 
-Los pasos en esta fase son muy sencillos ya que 
-
 1. Crear una cuenta en [The Things Network.](https://www.thethingsnetwork.org/)
 
 2. Crear un aplicación. Sólo se necesita pulsar sobre **add application** y poner un nombre al Application ID.
