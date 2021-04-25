@@ -19,9 +19,9 @@ Esta placa se programa igual que un Arduino, así que la idea es hacer nuestro p
 
 Crear el proyecto, compilarlo y enviarlo a la placa. 
 
-![](capturas/cap_01.png?raw=true)
+![](capturas/f1_01.png?raw=true)
 
-![](capturas/cap_02.png?raw=true)
+![](capturas/f1_02.png?raw=true)
 
 # Fase 2 - Cuenta en TTN 
 
@@ -29,11 +29,54 @@ Crear el proyecto, compilarlo y enviarlo a la placa.
 
 2. Crear una aplicación. Pulsar sobre **add application** y poner un nombre al Application ID.
 
-![](capturas/cap_03.png?raw=true)
+![](capturas/f1_03.png?raw=true)
 
 3. Crear un dispositivo dentro de la aplicación. Pulsar sobre **register device** y poner un nombre al Device ID.
 
-![](capturas/cap_04.png?raw=true)
+![](capturas/f1_04.png?raw=true)
+
+4. Primeras pruebas. Heltec nos suministra mucha documentación y ejemplos con [LoRaWAN](https://github.com/HelTecAutomation/CubeCell-Arduino/tree/master/libraries/LoRa/examples/LoRaWAN)
+
+    - Copiamos el código del ejemplo [LoRaWan_downlinkdatahandle](https://github.com/HelTecAutomation/CubeCell-Arduino/blob/master/libraries/LoRa/examples/LoRaWAN/LoRaWan_downlinkdatahandle/LoRaWan_downlinkdatahandle.ino)
+
+    - Ponemos en él los datos de nuestro dispositivo OTAA creado. Estos valores ( devEui[], appEui[], appKey[] ) se encuentran en nuestra consola de TTN. 
+
+    ```c
+    /* OTAA para*/
+    uint8_t devEui[] = { 0x22, 0x32, 0x33, 0x00, 0x00, 0x88, 0x88, 0x02 };
+    uint8_t appEui[] = { 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 };
+    uint8_t appKey[] = { 0x88, 0x88, 0x88, 0x88, 0x88, 0x88, 0x88, 0x88, 0x88, 0x88, 0x88, 0x88, 0x88, 0x88, 0x66, 0x01 };
+    ```
+    
+    - Modificamos el archivo platformio.ini para poner nuestras preferencias de compilación añadiendo las siguientes líneas.
+
+    ```c
+    monitor_speed = 115200
+    board_build.arduino.lorawan.region = EU868
+    board_build.arduino.lorawan.class = CLASS_A
+    board_build.arduino.lorawan.netmode = OTAA
+    board_build.arduino.lorawan.adr = ON
+    board_build.arduino.lorawan.debug_level = FREQ_AND_DIO
+    board_build.arduino.lorawan.at_support = OFF
+    board_build.arduino.lorawan.net_reserve = OFF
+    board_build.arduino.lorawan.rgb = ACTIVE
+    board_build.arduino.lorawan.uplinkmode = UNCONFIRMED
+     ```
+    - Compilamos y lo volcamos en la CubeCell.
+
+    ![](capturas/f2_01.png?raw=true)
+
+    - Veremos los datos enviados desde la CubeCell en consola de TTN.
+
+    ![](capturas/f2_02.png?raw=true)
+
+    - También podremos recibir datos en la CubeCell enviados desde la consola de TTN.
+
+    ![](capturas/f2_03.png?raw=true)
+
+    - Todo este tráfico se verá reflejado en el puerto serie.
+
+    ![](capturas/f2_04.png?raw=true)
 
 
 # Fase 3 - Software de envío y recepción de datos a TTN 
