@@ -78,6 +78,17 @@ Crear el proyecto, compilarlo y enviarlo a la placa.
 
     ![](capturas/f2_04.png?raw=true)
 
+5. Migrar a The Things Stack Community Edition (TTS)
+
+    - Creamos la aplicación y el dispositivo en TTS desde el repositorio de dispositivos LoRaWAN 
+
+    ![](capturas/f2_05.png?raw=true)
+
+    - Ponemos los valores devEui[], appEui[] y appKey[] que tenemos en la aplicación TTN V2
+
+    ![](capturas/f2_06.png?raw=true)
+
+    - Borramos o modificamos el appKey[] en TTN V2 y reiniciamos el dispositivo. Listo, la aplicación debería de estar funcionando en TTS.   
 
 # Fase 3 - Software de envío y recepción de datos a TTN 
 Programa para la CubeCell que envíe datos de un sensor cada cierto tiempo y active un relé desde TTN ...
